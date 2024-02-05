@@ -1,5 +1,5 @@
 const { getColorFromPairNumber, getPairNumberFromColor } = require('./functions.js');
-const { MajorColorNames, MinorColorNames, ColorPair } = require('./colorsDS.js');
+const { MajorColorNames, MinorColorNames, ColorPair,manual } = require('./colorsDS.js');
 
 function test(){
     pairNumber = 4;
@@ -33,6 +33,9 @@ function test(){
     pairNumber =getPairNumberFromColor(testPair2);
     console.log(`[In]Colors: ${testPair2}, [Out] PairNumber: ${pairNumber}`);
     console.assert(pairNumber==6);
+
+
+    console.log(manual);
 }
 
 test();
