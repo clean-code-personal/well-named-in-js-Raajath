@@ -11,7 +11,7 @@ function ColorPair(){
 }
 
 ColorPair.prototype.toString=function(){
-	return `MajorColor:${this.majorColor},MinorColr:${this.minorColor}`;
+	return `MajorColor:${this.majorColor},MinorColor:${this.minorColor}`;
 }
    function getReferenceManual() {
         let manual = "Color Coding Reference Manual:\n\n";
