@@ -34,6 +34,6 @@ jobs:
         
       
       # Runs a set of commands using the runners shell
-      - name: Run test
+      - name: Run colorCoder
         run: sudo npm run start
          
