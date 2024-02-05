@@ -2,7 +2,7 @@ const { getColorFromPairNumber, getPairNumberFromColor } = require('./colorConve
 const { MajorColorNames, MinorColorNames, ColorPair,manual } = require('./colorsDS.js');
 
 function test(){
-    pairNumber = 4;
+   pairNumber = 4;
     let testPair1 = getColorFromPairNumber(pairNumber);
     console.log(`[In]Pair Number: ${pairNumber},[Out] Colors:${testPair1}`);
     console.assert(testPair1.majorColor == "WHITE");
@@ -33,9 +33,20 @@ function test(){
     pairNumber =getPairNumberFromColor(testPair2);
     console.log(`[In]Colors: ${testPair2}, [Out] PairNumber: ${pairNumber}`);
     console.assert(pairNumber==6);
+    
+    
+    //Assuming  getColorFromPairNumber is alredy tested
+
+    for(const testPair of manual)
+    {
+        let pairNumber=testPair.pairNumber;
+        testColor=getColorFromPairNumber(pairNumber);
+        console.assert(testColor.majorColor==testPair.majorColor);
+        console.assert(testColor.minorColor==testPair.minorColor);
+        console.log(testPair);
+    }
 
 
-    console.log(manual);
 }
 
 test();
