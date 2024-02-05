@@ -46,7 +46,29 @@ function getPairNumberFromColor(pair)
                 throw `Unknown Colors:${pair.toString()}`;
             }
 
+		
         return (majorIndex * MinorColorNames.length) + (minorIndex + 1);
 	 }
+
+
+
+  function getReferenceManual() {
+        let manual = "Reference Manual:\n\n";
+      
+        for (let majorIndex = 0; majorIndex < MajorColorNames.length; majorIndex++) {
+            for (let minorIndex = 0; minorIndex < MinorColorNames.length; minorIndex++) {
+                let pairNumber = (majorIndex * MinorColorNames.length) + (minorIndex + 1);
+                let pair = new ColorPair();
+             
+                manual += `${pairNumber}:"Major Color->" ${MajorColorNames[majorIndex]} "Minor color-->" ${MinorColorNames[minorIndex]}\n`;
+            }
+        }
+        return manual;
+      }
 	 
-     module.exports = { getColorFromPairNumber, getPairNumberFromColor };
+     module.exports = { getColorFromPairNumber, getPairNumberFromColor, getReferenceManual };
+
+
+
+
+
