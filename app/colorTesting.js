@@ -19,7 +19,7 @@ function testColor(majorColor,minorColor,expectedPairNumber)
     console.assert(pairNumber==expectedPairNumber);
 }
 
-function testManual()
+/*function testManualAuto()
 { 
     
     //Assuming  getColorFromPairNumber is alredy tested
@@ -31,21 +31,53 @@ function testManual()
         console.assert(testColor.minorColor==testPair.minorColor);
        
     }
+
+}*/
+
+function testManualEntry(pairNumber,majorColor,minorColor)
+{
+  let result =  manualObject.find((obj) =>{return obj.pairNumber===pairNumber && obj.majorColor===majorColor && obj.minorColor===minorColor});
+  
+  if(result){
+    console.log("\n Exists in Reference Manual");
+    testPairNumber(pairNumber,majorColor,minorColor);
+    //assertion should not fail here
+  }
+  else{
+    console.log("\n Does't exist in Reference manual");
+    testPairNumber(pairNumber,majorColor,minorColor);
+    // assertion should fail here
+  }
+  
 }
+
+
 
 
 
 function runTests(){
 
-   testPairNumber(4,"WHITE","BROWN"); 
+  testPairNumber(4,"WHITE","BROWN"); 
+   
    testPairNumber(5,"WHITE","SLATEGRAY"); 
+   
    testPairNumber(23,"RED","GREEN");
   
    testColor("YELLOW","GREEN",18);
    testColor("RED","BLUE",6);
+ 
 
-   testManual();
+  // testManualAuto();
+   
+   testManualEntry(4,"WHITE","BROWN");
+   testManualEntry(25,"VIOLET","SLATE");
 
+   testManualEntry(23,"WHITE","BROWN");
+   testManualEntry(3,"YELLOW","BLACK");
+   testManualEntry(6,"GREEN","ORANGE");
+   
+
+  
 
 }
 

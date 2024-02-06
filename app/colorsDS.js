@@ -29,10 +29,10 @@ function getReferenceManual() {
                 majorColor: MajorColorNames[majorIndex],
                 minorColor: MinorColorNames[minorIndex]
             };
-            // to test
+            // to test Object
             manualObject.push(colorPair);
         
-            //to print
+            //to print string
             manualString += `Pair Number: ${colorPair.pairNumber}, Major Color: ${colorPair.majorColor}, Minor Color: ${colorPair.minorColor}\n`;
         }
     }
