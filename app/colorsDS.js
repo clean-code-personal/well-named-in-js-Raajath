@@ -19,9 +19,9 @@ ColorPair.prototype.toString=function(){
 
 
 function getReferenceManual() {
-    let manual = [];
-
-    for (let majorIndex = 0; majorIndex < MajorColorNames.length; majorIndex++) {
+    let manualObject = [];
+    let manualString="                   Color Coding wires \n\n"
+       for (let majorIndex = 0; majorIndex < MajorColorNames.length; majorIndex++) {
         for (let minorIndex = 0; minorIndex < MinorColorNames.length; minorIndex++) {
             let pairNumber = (majorIndex * MinorColorNames.length) + (minorIndex + 1);
             let colorPair = {
@@ -29,15 +29,19 @@ function getReferenceManual() {
                 majorColor: MajorColorNames[majorIndex],
                 minorColor: MinorColorNames[minorIndex]
             };
-            manual.push(colorPair);
+            // to test
+            manualObject.push(colorPair);
+        
+            //to print
+            manualString += `Pair Number: ${colorPair.pairNumber}, Major Color: ${colorPair.majorColor}, Minor Color: ${colorPair.minorColor}\n`;
         }
     }
 
-    return manual;
+    return manualObject,manualString;
 }
 
-let manual= getReferenceManual();
+let manualObject,manualString= getReferenceManual();
 
 
 
-module.exports={MajorColorNames,MinorColorNames,ColorPair,manual};
+module.exports={MajorColorNames,MinorColorNames,ColorPair,manualObject,manualString};
