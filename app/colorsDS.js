@@ -37,10 +37,12 @@ function getReferenceManual() {
         }
     }
 
-    return manualObject,manualString;
+    return [manualObject,manualString];
 }
 
-let manualObject,manualString= getReferenceManual();
+manual= getReferenceManual();
+manualObject=manual[0];
+manualString=manual[1];
 
 
 
